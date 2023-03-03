@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B1DD22B3-E73B-464F-A23F-585B17480F84}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CalcTributario.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Demo\Project3.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CalcTributario">
+        <MSBuild Projects="CalcTributario.dproj"/>
+    </Target>
+    <Target Name="CalcTributario:Clean">
+        <MSBuild Projects="CalcTributario.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CalcTributario:Make">
+        <MSBuild Projects="CalcTributario.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project3">
+        <MSBuild Projects="Demo\Project3.dproj"/>
+    </Target>
+    <Target Name="Project3:Clean">
+        <MSBuild Projects="Demo\Project3.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project3:Make">
+        <MSBuild Projects="Demo\Project3.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CalcTributario;Project3"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CalcTributario:Clean;Project3:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CalcTributario:Make;Project3:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,460 @@
+unit CalculoTributario;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type TCSts         = ( p000, p010, p020, p030, p040, p050, p051, p060, p070, p090, p101, p102, p103, p201, p202, p203, p300, p400, p500, p900 );
+type TCstPisCofins = ( pis01 ,pis02, pis03, pis04, pis05, pis06, pis07, pis08, pis09, pis49, pis50, pis51, pis52, pis53, pis54, pis55, pis56, pis60, pis61, pis62, pis63, pis64, pis65, pis66, pis67, pis70, pis71, pis72, pis73, pis74, pis75, pis98, pis99 );
+type TTipoPessoa   = ( pFisica, pJuridica );
+type TTpNF         = ( tpSaida, tpEntrada );
+type TpModalidade  = ( tmValorOperacao, tmPauta, tmMargemValorAgregado );
+
+type
+  TDTTributo = class(TComponent)
+  private
+    FAliqReducaoBC: Currency;
+    FCalculoVeiculo: Boolean;
+    FValorIPI: Currency;
+    FMvaAjustado: Currency;
+    FValorIcmsST: Currency;
+    FDesconto: Currency;
+    FCstPisCofins: TCstPisCofins;
+    FAliqDestino: Currency;
+    FAliqInternaUFOrigem: Currency;
+    FValorFCPST: Currency;
+    FAliqIPI: Currency;
+    FValorReducaoIcmsST: Currency;
+    FAliqOrigem: Currency;
+    FAliqIcmsST: Currency;
+    FTipoNF: TTpNF;
+    FHabilitaDIFAL: Boolean;
+    FMva: Currency;
+    FAliqFCPST: Currency;
+    FUFDestinatario: string;
+    FValorIcms: Currency;
+    FModalidadeST: TpModalidade;
+    FTipoPessoa: TTipoPessoa;
+    FAliqIcmsSTPauta: Currency;
+    FValorDIFALDestinatario: Currency;
+    FValorFCP: Currency;
+    FAliqValorFCPRet: Currency;
+    FValorReducaoIcms: Currency;
+    FAliqIcms: Currency;
+    FAliqDIFAL: Currency;
+    FBaseIPI: Currency;
+    FBaseIcmsST: Currency;
+    FAliqFCP: Currency;
+    FValorPis: Currency;
+    FUFEmitente: string;
+    FAliqFCPRet: Currency;
+    FValorCofins: Currency;
+    FCustoVeiculo: Currency;
+    FAbaterIcmsDaBasePisCofins: Boolean;
+    FFrete: Currency;
+    FCRT: string;
+    FDespesa: Currency;
+    FValorProdutos: Currency;
+    FCST: TCSts;
+    FAliqPis: Currency;
+    FBasePisCofins: Currency;
+    FAliqCofins: Currency;
+    FBaseIcms: Currency;
+    procedure setAbaterIcmsDaBasePisCofins(const Value: Boolean);
+    procedure setAliqCofins(const Value: Currency);
+    procedure setAliqDestino(const Value: Currency);
+    procedure setAliqDIFAL(const Value: Currency);
+    procedure setAliqFCPRet(const Value: Currency);
+    procedure setAliqFCPST(const Value: Currency);
+    procedure setAliqIcms(const Value: Currency);
+    procedure setAliqIcmsST(const Value: Currency);
+    procedure setAliqIcmsSTPauta(const Value: Currency);
+    procedure setAliqInternaUFOrigem(const Value: Currency);
+    procedure setAliqIPI(const Value: Currency);
+    procedure setAliqOriem(const Value: Currency);
+    procedure setAliqPIs(const Value: Currency);
+    procedure setAliqReducaoST(const Value: Currency);
+    procedure setAliqValorFCPRet(const Value: Currency);
+    procedure setBaseIcms(const Value: Currency);
+    procedure setBaseIcmsST(const Value: Currency);
+    procedure setBaseIPI(const Value: Currency);
+    procedure setBasePisCofins(const Value: Currency);
+    procedure setCalculoVeiculo(const Value: Boolean);
+    procedure setCRT(const Value: string);
+    procedure setCST(const Value: TCSts);
+    procedure setCstPisCofins(const Value: TCstPisCofins);
+    procedure setCustoVeiculo(const Value: Currency);
+    procedure setDesconto(const Value: Currency);
+    procedure setDespesa(const Value: Currency);
+    procedure setFCP(const Value: Currency);
+    procedure setFrete(const Value: Currency);
+    procedure setHabilitaDIFAL(const Value: Boolean);
+    procedure setModalidadeST(const Value: TpModalidade);
+    procedure setMva(const Value: Currency);
+    procedure setMvaAjustado(const Value: Currency);
+    procedure setTipoNF(const Value: TTpNF);
+    procedure setTipoPessoa(const Value: TTipoPessoa);
+    procedure setUFDestinatario(const Value: string);
+    procedure setUFEmitente(const Value: string);
+    procedure setValorCofins(const Value: Currency);
+    procedure setValorDIFALDestinatario(const Value: Currency);
+    procedure setValorFCP(const Value: Currency);
+    procedure setValorFCPST(const Value: Currency);
+    procedure setValorIcms(const Value: Currency);
+    procedure setValorIcmsST(const Value: Currency);
+    procedure setValorIPI(const Value: Currency);
+    procedure setValorPis(const Value: Currency);
+    procedure setValorProdutos(const Value: Currency);
+    procedure setValorReducaoIcms(const Value: Currency);
+    procedure setValorReducaoIcmsST(const Value: Currency);
+
+  protected
+
+  public
+    function StrToEnumerado(out ok: boolean; const s: string; const AString:array of string; const AEnumerados: array of variant): variant;
+    function StrToCSTICMS(out ok: boolean; const s: string): TCSts;
+    function StrToCSTPisCofins(out ok:Boolean; const s: string): TCstPisCofins;
+    procedure ZeraValores;
+
+  published
+    property CST: TCSts                        read FCST                       write setCST;
+    property ValorProdutos:Currency            read FValorProdutos             write setValorProdutos;
+    property Desconto:Currency                 read FDesconto                  write setDesconto;
+    property Despesa:Currency                  read FDespesa                   write setDespesa;
+    property Frete:Currency                    read FFrete                     write setFrete;
+    // calculo icms
+    property CalculoVeiculo:Boolean            read FCalculoVeiculo            write setCalculoVeiculo default False;
+    property CustoVeiculo:Currency             read FCustoVeiculo              write setCustoVeiculo;
+    property BaseIcms:Currency                 read FBaseIcms                  write setBaseIcms;
+    property ValorIcms:Currency                read FValorIcms                 write setValorIcms;
+    property AliqIcms:Currency                 read FAliqIcms                  write setAliqIcms;
+    property AliqReducaoBC:Currency            read FAliqReducaoBC             write setAliqReducaoST;
+    property ValorReducaoIcms:Currency         read FValorReducaoIcms          write setValorReducaoIcms;
+    // calculo St
+    property BaseIcmsST:Currency               read FBaseIcmsST                write setBaseIcmsST;
+    property AliqIcmsST:Currency               read FAliqIcmsST                write setAliqIcmsST;
+    property ValorIcmsST:Currency              read FValorIcmsST               write setValorIcmsST;
+    property Mva:Currency                      read FMva                       write setMva;
+    property MvaAjustado:Currency              read FMvaAjustado               write setMvaAjustado;
+    property AliqOrigem:Currency               read FAliqOrigem                write setAliqOriem;
+    property AliqDestino:Currency              read FAliqDestino               write setAliqDestino;
+    property ModalidadeST:TpModalidade         read FModalidadeST              write setModalidadeST;
+    property ValorReducaoIcmsST:Currency       read FValorReducaoIcmsST        write setValorReducaoIcmsST;
+    property AliqIcmsSTPauta:Currency          read FAliqIcmsSTPauta           write setAliqIcmsSTPauta;
+    // dados UF Cliente / Destinatario
+    property TipoClienteForn:TTipoPessoa       read FTipoPessoa                write setTipoPessoa;
+    property TipoNF:TTpNF                      read FTipoNF                    write setTipoNF;
+    property UFEmitente:string                 read FUFEmitente                write setUFEmitente;
+    property UFDestinatario:string             read FUFDestinatario            write setUFDestinatario;
+    property CRT:string                        read FCRT                       write setCRT;
+    // calculo Ipi
+    property BaseIPI:Currency                  read FBaseIPI                   write setBaseIPI;
+    property AliqIPI:Currency                  read FAliqIPI                   write setAliqIPI;
+    property ValorIPI:Currency                 read FValorIPI                  write setValorIPI;
+    // calculo Pis / Cofins
+    property CstPisCofins : TCstPisCofins      read FCstPisCofins              write setCstPisCofins;
+    property AbaterIcmsDaBasePisCofins:Boolean read FAbaterIcmsDaBasePisCofins write setAbaterIcmsDaBasePisCofins;
+    property BasePisCofins:Currency            read FBasePisCofins             write setBasePisCofins;
+    property AliqPis:Currency                  read FAliqPis                   write setAliqPIs;
+    property ValorPis:Currency                 read FValorPis                  write setValorPis;
+    property AliqCofins:Currency               read FAliqCofins                write setAliqCofins;
+    property ValorCofins:Currency              read FValorCofins               write setValorCofins;
+    // calculo FCP - FCPST - FCPRet
+    property AliqFCP:Currency                  read FAliqFCP                   write setFCP;
+    property ValorFCP:Currency                 read FValorFCP                  write setValorFCP;
+    property AliqFCPST:Currency                read FAliqFCPST                 write setAliqFCPST;
+    property ValorFCPST:Currency               read FValorFCPST                write setValorFCPST;
+    property AliqFCPRet:Currency               read FAliqFCPRet                write setAliqFCPRet;
+    property ValorFCPRet:Currency              read FAliqValorFCPRet           write setAliqValorFCPRet;
+    // calculo DIFAL
+    property HabilitaDIFAL:Boolean             read FHabilitaDIFAL             write setHabilitaDIFAL default True;
+    property AliqDIFAL:Currency                read FAliqDIFAL                 write setAliqDIFAL;
+    property AliqInternaUFOrigem:Currency      read FAliqInternaUFOrigem       write setAliqInternaUFOrigem;
+    property ValorDIFALDestinatario:Currency   read FValorDIFALDestinatario    write setValorDIFALDestinatario;
+
+  end;
+
+procedure Register;
+
+implementation
+
+procedure Register;
+begin
+  RegisterComponents('DT Inovacao', [TDTTributo]);
+end;
+
+{ TDTTributo }
+
+procedure TDTTributo.setAbaterIcmsDaBasePisCofins(const Value: Boolean);
+begin
+  FAbaterIcmsDaBasePisCofins := Value;
+end;
+
+procedure TDTTributo.setAliqCofins(const Value: Currency);
+begin
+  FAliqCofins := Value;
+end;
+
+procedure TDTTributo.setAliqDestino(const Value: Currency);
+begin
+  FAliqDestino := Value;
+end;
+
+procedure TDTTributo.setAliqDIFAL(const Value: Currency);
+begin
+  FAliqDIFAL := Value;
+end;
+
+procedure TDTTributo.setAliqFCPRet(const Value: Currency);
+begin
+  FAliqFCPRet := Value;
+end;
+
+procedure TDTTributo.setAliqFCPST(const Value: Currency);
+begin
+  FAliqFCPST := Value;
+end;
+
+procedure TDTTributo.setAliqIcms(const Value: Currency);
+begin
+  FAliqIcms := Value;
+end;
+
+procedure TDTTributo.setAliqIcmsST(const Value: Currency);
+begin
+  FAliqIcmsST := Value;
+end;
+
+procedure TDTTributo.setAliqIcmsSTPauta(const Value: Currency);
+begin
+  FAliqIcmsSTPauta := Value;
+end;
+
+procedure TDTTributo.setAliqInternaUFOrigem(const Value: Currency);
+begin
+  FAliqInternaUFOrigem := Value;
+end;
+
+procedure TDTTributo.setAliqIPI(const Value: Currency);
+begin
+  FAliqIPI := Value;
+end;
+
+procedure TDTTributo.setAliqOriem(const Value: Currency);
+begin
+  FAliqOrigem := Value;
+end;
+
+procedure TDTTributo.setAliqPIs(const Value: Currency);
+begin
+  FAliqPis := Value;
+end;
+
+procedure TDTTributo.setAliqReducaoST(const Value: Currency);
+begin
+  FAliqReducaoBC := Value;
+end;
+
+procedure TDTTributo.setAliqValorFCPRet(const Value: Currency);
+begin
+  FAliqValorFCPRet := Value;
+end;
+
+procedure TDTTributo.setBaseIcms(const Value: Currency);
+begin
+  FBaseIcms := Value;
+end;
+
+procedure TDTTributo.setBaseIcmsST(const Value: Currency);
+begin
+  FBaseIcmsST := Value;
+end;
+
+procedure TDTTributo.setBaseIPI(const Value: Currency);
+begin
+  FBaseIPI := Value;
+end;
+
+procedure TDTTributo.setBasePisCofins(const Value: Currency);
+begin
+  FBasePisCofins := Value;
+end;
+
+procedure TDTTributo.setCalculoVeiculo(const Value: Boolean);
+begin
+  FCalculoVeiculo := Value;
+end;
+
+procedure TDTTributo.setCRT(const Value: string);
+begin
+  FCRT := Value;
+end;
+
+procedure TDTTributo.setCST(const Value: TCSts);
+begin
+  FCST := Value;
+end;
+
+procedure TDTTributo.setCstPisCofins(const Value: TCstPisCofins);
+begin
+  FCstPisCofins := Value;
+end;
+
+procedure TDTTributo.setCustoVeiculo(const Value: Currency);
+begin
+  FCustoVeiculo := Value;
+end;
+
+procedure TDTTributo.setDesconto(const Value: Currency);
+begin
+  FDesconto := Value;
+end;
+
+procedure TDTTributo.setDespesa(const Value: Currency);
+begin
+  FDespesa := Value;
+end;
+
+procedure TDTTributo.setFCP(const Value: Currency);
+begin
+  FAliqFCP := Value;
+end;
+
+procedure TDTTributo.setFrete(const Value: Currency);
+begin
+  FFrete := Value;
+end;
+
+procedure TDTTributo.setHabilitaDIFAL(const Value: Boolean);
+begin
+  FHabilitaDIFAL := Value;
+end;
+
+procedure TDTTributo.setModalidadeST(const Value: TpModalidade);
+begin
+  FModalidadeST := Value;
+end;
+
+procedure TDTTributo.setMva(const Value: Currency);
+begin
+  FMva := Value;
+end;
+
+procedure TDTTributo.setMvaAjustado(const Value: Currency);
+begin
+  FMvaAjustado := Value;
+end;
+
+procedure TDTTributo.setTipoNF(const Value: TTpNF);
+begin
+  FTipoNF := Value;
+end;
+
+procedure TDTTributo.setTipoPessoa(const Value: TTipoPessoa);
+begin
+  FTipoPessoa := Value;
+end;
+
+procedure TDTTributo.setUFDestinatario(const Value: string);
+begin
+  FUFDestinatario := Value;
+end;
+
+procedure TDTTributo.setUFEmitente(const Value: string);
+begin
+  FUFEmitente := Value;
+end;
+
+procedure TDTTributo.setValorCofins(const Value: Currency);
+begin
+  FValorCofins := Value;
+end;
+
+procedure TDTTributo.setValorDIFALDestinatario(const Value: Currency);
+begin
+  FValorDIFALDestinatario := Value;
+end;
+
+procedure TDTTributo.setValorFCP(const Value: Currency);
+begin
+  FValorFCP := Value;
+end;
+
+procedure TDTTributo.setValorFCPST(const Value: Currency);
+begin
+  FValorFCPST := Value;
+end;
+
+procedure TDTTributo.setValorIcms(const Value: Currency);
+begin
+  FValorIcms := Value;
+end;
+
+procedure TDTTributo.setValorIcmsST(const Value: Currency);
+begin
+  FValorIcmsST := Value;
+end;
+
+procedure TDTTributo.setValorIPI(const Value: Currency);
+begin
+  FValorIPI := Value;
+end;
+
+procedure TDTTributo.setValorPis(const Value: Currency);
+begin
+  FValorPis := Value;
+end;
+
+procedure TDTTributo.setValorProdutos(const Value: Currency);
+begin
+  FValorProdutos := Value;
+end;
+
+procedure TDTTributo.setValorReducaoIcms(const Value: Currency);
+begin
+  FValorReducaoIcms := Value;
+end;
+
+procedure TDTTributo.setValorReducaoIcmsST(const Value: Currency);
+begin
+  FValorReducaoIcmsST := Value;
+end;
+
+function TDTTributo.StrToCSTICMS(out ok: boolean; const s: string): TCSts;
+begin
+    result := StrToEnumerado(ok, s, ['000', '010', '020', '030', '040', '050', '051', '060', '070', '090', '101', '102', '103', '201', '202', '203', '300', '400', '500', '900'],
+                                  [p000, p010, p020, p030, p040, p050, p051, p060, p070, p090, p101, p102, p103, p201, p202, p203, p300, p400, p500, p900]);
+end;
+
+function TDTTributo.StrToCSTPisCofins(out ok: Boolean;
+  const s: string): TCstPisCofins;
+begin
+     Result := StrToEnumerado(ok, s, ['01','02','03','04','05','06','07','08','09','49','50','51','52','53','54','55','56','60','61','62','63','64','65','66','67','70','71','72','73','74','75','98','99'],
+                                  [pis01, pis02, pis03, pis04, pis05, pis06, pis07, pis08, pis09, pis49, pis50, pis51, pis52, pis53, pis54, pis55, pis56, pis60, pis61, pis62, pis63, pis64, pis65, pis66, pis67, pis70, pis71, pis72, pis73, pis74, pis75, pis98, pis99]);
+end;
+
+function TDTTributo.StrToEnumerado(out ok: boolean; const s: string;
+  const AString: array of string; const AEnumerados: array of variant): variant;
+var
+  i: integer;
+begin
+  result := -1;
+  for i := Low(AString) to High(AString) do
+    if AnsiSameText(s, AString[i]) then
+      result := AEnumerados[i];
+  ok := result <> -1;
+  if not ok then
+    result := AEnumerados[0];
+end;
+
+procedure TDTTributo.ZeraValores;
+begin
+     FBaseIcms         := 0;
+     FValorIcms        := 0;
+     FBaseIcmsST       := 0;
+     FValorIcmsST      := 0;
+     FValorReducaoIcms := 0;
+end;
+
+end.

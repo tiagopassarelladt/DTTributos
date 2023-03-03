@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/04/03 17:33:25.000.830,=rtl.dcp</Transaction>
+    <Transaction>2022/04/03 17:33:37.000.346,C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\CalcTributario.dproj=C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\Package1.dproj</Transaction>
+    <Transaction>2022/04/03 17:34:59.000.416,=D:\Dropbox\Componentes\DTTributos\CalcTributos.pas</Transaction>
+    <Transaction>2022/04/03 17:35:15.000.861,D:\Dropbox\Componentes\DTTributos\CalcTributario.dproj=C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\CalcTributario.dproj</Transaction>
+    <Transaction>2022/04/03 17:35:32.000.990,D:\Dropbox\Componentes\DTTributos\CalculoTributos.pas=D:\Dropbox\Componentes\DTTributos\CalcTributos.pas</Transaction>
+    <Transaction>2022/04/03 17:35:40.000.659,D:\Dropbox\Componentes\DTTributos\CalculoTributario.pas=D:\Dropbox\Componentes\DTTributos\CalculoTributos.pas</Transaction>
+  </Transactions>
+</BorlandProject>

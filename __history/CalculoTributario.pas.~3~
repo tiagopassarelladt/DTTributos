@@ -1,0 +1,29 @@
+unit CalculoTributario;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TDTTributo = class(TComponent)
+  private
+
+  protected
+
+  public
+
+  published
+
+  end;
+
+procedure Register;
+
+implementation
+
+procedure Register;
+begin
+  RegisterComponents('DT Inovacao', [TDTTributo]);
+end;
+
+end.
