@@ -1,9 +1,11 @@
 unit CalculoTributario;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  System.SysUtils, System.Classes;
+  SysUtils, Classes;
 
 type TCSts         = ( pi000, pi010, pi020, pi030, pi040, pi050, pi051, pi060, pi070, pi090, pi101, pi102, pi103, pi201, pi202, pi203, pi300, pi400, pi500, pi900 );
 type TCstPisCofins = ( Ppis01 ,Ppis02, Ppis03, Ppis04, Ppis05, Ppis06, Ppis07, Ppis08, Ppis09, Ppis49, Ppis50, Ppis51, Ppis52, Ppis53, Ppis54, Ppis55, Ppis56, Ppis60, Ppis61, Ppis62, Ppis63, Ppis64, Ppis65, Ppis66, Ppis67, Ppis70, Ppis71, Ppis72, Ppis73, Ppis74, Ppis75, Ppis98, Ppis99 );
@@ -292,7 +294,7 @@ begin
                  BaseIcms         := FormataValor(((ValorProdutos + Frete + Despesa + ValorIPI) - Desconto),2);
                  ValorIcms        := FormataValor(((BaseIcms * AliqIcms)/100),2); //pessoa fisica sempre usa a aliquota normal da UF emissao
                end;
-               if TipoClienteForn = pCJuridica then //pessoa juridica não inclui ipi na base de calculo do icms
+               if TipoClienteForn = pCJuridica then //pessoa juridica nÃ£o inclui ipi na base de calculo do icms
                begin
                  BaseIcms         := FormataValor(((ValorProdutos + Frete + Despesa) - Desconto),2); //pessoa juridica nao inclui ipi na base de calculo
                  ValorIcms        := FormataValor((((BaseIcms) * AliqIcms) / 100),2);
@@ -356,7 +358,7 @@ begin
                     BasePisCofins := FormataValor(ValorProdutos - CustoVeiculo,2);
                 end;
               end;
-              if TipoClienteForn = pCJuridica then //pessoa juridica não inclui ipi na base de calculo do icms
+              if TipoClienteForn = pCJuridica then //pessoa juridica nÃ£o inclui ipi na base de calculo do icms
               begin
                 if not CalculoVeiculo then
                 begin
@@ -421,7 +423,7 @@ begin
                  BaseIcms         := FormataValor(BaseIcms - ValorReducaoIcms,2);
                  ValorIcms        := FormataValor(((BaseIcms * AliqIcms)/100),2); //pessoa fisica sempre usa a aliquota normal da UF emissao
                end;
-               if TipoClienteForn = pCJuridica then //pessoa juridica não inclui ipi na base de calculo do icms
+               if TipoClienteForn = pCJuridica then //pessoa juridica nÃ£o inclui ipi na base de calculo do icms
                begin
                  BaseIcms         := FormataValor(((ValorProdutos + Frete + Despesa + ValorIPI) - Desconto),2); //pessoa juridica nao inclui ipi na base de calculo
                  if AliqReducaoBC>0 then
