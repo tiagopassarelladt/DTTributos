@@ -1,0 +1,1196 @@
+object Form1: TForm1
+  Left = -1074
+  Height = 500
+  Top = 129
+  Width = 895
+  Anchors = [akTop, akLeft, akRight, akBottom]
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Demo - Motor Tributario'
+  ClientHeight = 500
+  ClientWidth = 895
+  Icon.Data = {
+    BE1000000000010001002020000001002000A810000016000000280000002000
+    0000400000000100200000000000001000006400000064000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000015B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1
+    FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000015B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1
+    FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000014B0FE7C15B1FFFF15B1FFFF15AFFE84000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    000000000000000000000000000014B0FE7C15B1FFFF15B1FFFF15AFFE840000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000000000000000000014B0FE7C15B1FFFF15B1FFFF15AF
+    FE84000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000014B0FE7C15B1FFFF15B1
+    FFFF15AFFE840000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000015AFFE8415B1FFFF15B1
+    FFFF14B0FE7C0000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000000000000000000015AFFE8415B1FFFF15B1FFFF14B0
+    FE7C000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF00000000000000000000000015AFFE8415B1FFFF15B1FFFF14B0FE7C0000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000015AFFE8415B1FFFF15B1FFFF14B0FE7C000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000015B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1
+    FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000015B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1
+    FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF15B1FFFF000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF0000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000000000000000D77711FFD77711FFD77711FFD77711FFD77711FFD777
+    11FF000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000
+  }
+  KeyPreview = True
+  Position = poWorkAreaCenter
+  LCLVersion = '2.2.6.0'
+  object Label1: TLabel
+    Left = 32
+    Height = 15
+    Top = 16
+    Width = 76
+    Anchors = []
+    AutoSize = False
+    Caption = 'Total Produtos'
+    ParentColor = False
+  end
+  object Label11: TLabel
+    Left = 126
+    Height = 15
+    Top = 16
+    Width = 48
+    Anchors = []
+    AutoSize = False
+    Caption = 'CST icms'
+    ParentColor = False
+  end
+  object Label18: TLabel
+    Left = 220
+    Height = 15
+    Top = 16
+    Width = 62
+    Anchors = []
+    AutoSize = False
+    Caption = 'Tipo Pessoa'
+    ParentColor = False
+  end
+  object edtTotalProdutos: TJvCalcEdit
+    Left = 32
+    Height = 23
+    Top = 32
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 0
+    Value = 100
+    DecimalPlacesAlwaysShown = False
+  end
+  object edtCST: TEdit
+    Left = 126
+    Height = 23
+    Top = 32
+    Width = 88
+    Alignment = taCenter
+    Anchors = []
+    AutoSize = False
+    TabOrder = 1
+    Text = '000'
+  end
+  object ComboBox1: TComboBox
+    Cursor = crHandPoint
+    Left = 220
+    Height = 22
+    Top = 33
+    Width = 144
+    Anchors = []
+    AutoSize = False
+    Color = clInfoBk
+    ItemHeight = 16
+    ItemIndex = 0
+    Items.Strings = (
+      '1 - Fisica'
+      '2 - Juridica'
+    )
+    Style = csOwnerDrawFixed
+    TabOrder = 2
+    Text = '1 - Fisica'
+  end
+  object CheckBox1: TCheckBox
+    Cursor = crHandPoint
+    Left = 373
+    Height = 19
+    Top = 34
+    Width = 179
+    Caption = 'Calculo para venda de Veículo'
+    TabOrder = 3
+  end
+  object CheckBox2: TCheckBox
+    Cursor = crHandPoint
+    Left = 547
+    Height = 19
+    Top = 34
+    Width = 93
+    Caption = 'Calcula DIFAL'
+    TabOrder = 4
+  end
+  object Button1: TButton
+    Cursor = crHandPoint
+    Left = 732
+    Height = 26
+    Top = 16
+    Width = 87
+    Caption = 'Calcular'
+    OnClick = Button1Click
+    TabOrder = 5
+  end
+  object Panel1: TPanel
+    Left = 32
+    Height = 25
+    Top = 59
+    Width = 785
+    BevelOuter = bvNone
+    Caption = 'Valores Ref ao ICMS'
+    Color = 15524797
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 6
+  end
+  object Panel2: TPanel
+    Left = 32
+    Height = 25
+    Top = 140
+    Width = 785
+    BevelOuter = bvNone
+    Caption = 'Valores Ref. a ST'
+    Color = 15524797
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 7
+  end
+  object Panel6: TPanel
+    Left = 315
+    Height = 25
+    Top = 297
+    Width = 501
+    BevelOuter = bvNone
+    Caption = 'Valores Ref. ao FCP'
+    Color = 15524797
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 8
+  end
+  object Panel4: TPanel
+    Left = 32
+    Height = 25
+    Top = 297
+    Width = 276
+    BevelOuter = bvNone
+    Caption = 'Valores Ref. ao DIFAL'
+    Color = 15524797
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 9
+  end
+  object Label14: TLabel
+    Left = 634
+    Height = 15
+    Top = 378
+    Width = 121
+    Anchors = []
+    AutoSize = False
+    Caption = 'Valor total da operação'
+    ParentColor = False
+  end
+  object edtTotal: TJvCalcEdit
+    Left = 634
+    Height = 31
+    Top = 395
+    Width = 182
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 10
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object edtDespesa: TJvCalcEdit
+    Left = 32
+    Height = 23
+    Top = 107
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 11
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label2: TLabel
+    Left = 32
+    Height = 15
+    Top = 91
+    Width = 43
+    Anchors = []
+    AutoSize = False
+    Caption = 'Despesa'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 126
+    Height = 15
+    Top = 91
+    Width = 24
+    Anchors = []
+    AutoSize = False
+    Caption = 'frete'
+    ParentColor = False
+  end
+  object edtDesconto: TJvCalcEdit
+    Left = 220
+    Height = 23
+    Top = 107
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 12
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label4: TLabel
+    Left = 220
+    Height = 15
+    Top = 91
+    Width = 49
+    Anchors = []
+    AutoSize = False
+    Caption = 'desconto'
+    ParentColor = False
+  end
+  object edtAliqOrigem: TJvCalcEdit
+    Left = 315
+    Height = 23
+    Top = 107
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 13
+    Value = 18
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label5: TLabel
+    Left = 315
+    Height = 15
+    Top = 91
+    Width = 88
+    Anchors = []
+    AutoSize = False
+    Caption = 'Aliquota Origem'
+    ParentColor = False
+  end
+  object edtBaseIcms: TJvCalcEdit
+    Left = 409
+    Height = 23
+    Top = 107
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 14
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label7: TLabel
+    Left = 409
+    Height = 15
+    Top = 91
+    Width = 52
+    Anchors = []
+    AutoSize = False
+    Caption = 'Base Icms'
+    ParentColor = False
+  end
+  object edtAliqIcms: TJvCalcEdit
+    Left = 503
+    Height = 23
+    Top = 107
+    Width = 54
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 15
+    Value = 18
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label8: TLabel
+    Left = 503
+    Height = 15
+    Top = 91
+    Width = 38
+    Anchors = []
+    AutoSize = False
+    Caption = '% Icms'
+    ParentColor = False
+  end
+  object edtAliqReducao: TJvCalcEdit
+    Left = 564
+    Height = 23
+    Top = 107
+    Width = 65
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 16
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label9: TLabel
+    Left = 564
+    Height = 15
+    Top = 91
+    Width = 59
+    Anchors = []
+    AutoSize = False
+    Caption = '% Reducao'
+    ParentColor = False
+  end
+  object edtValorIcms: TJvCalcEdit
+    Left = 635
+    Height = 23
+    Top = 107
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 17
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label10: TLabel
+    Left = 635
+    Height = 15
+    Top = 91
+    Width = 54
+    Anchors = []
+    AutoSize = False
+    Caption = 'Valor Icms'
+    ParentColor = False
+  end
+  object edtBIcmsST: TJvCalcEdit
+    Left = 32
+    Height = 23
+    Top = 188
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 18
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label6: TLabel
+    Left = 32
+    Height = 15
+    Top = 172
+    Width = 67
+    Anchors = []
+    AutoSize = False
+    Caption = 'Base Icms ST'
+    ParentColor = False
+  end
+  object edtAliqST: TJvCalcEdit
+    Left = 126
+    Height = 23
+    Top = 188
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 19
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label12: TLabel
+    Left = 126
+    Height = 15
+    Top = 172
+    Width = 60
+    Anchors = []
+    AutoSize = False
+    Caption = 'Aliquota ST'
+    ParentColor = False
+  end
+  object edtMVa: TJvCalcEdit
+    Left = 220
+    Height = 23
+    Top = 188
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 20
+    Value = 50
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label13: TLabel
+    Left = 220
+    Height = 15
+    Top = 172
+    Width = 23
+    Anchors = []
+    AutoSize = False
+    Caption = 'Mva'
+    ParentColor = False
+  end
+  object edtMvaAjustado: TJvCalcEdit
+    Left = 315
+    Height = 23
+    Top = 188
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 21
+    Value = 50
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label19: TLabel
+    Left = 315
+    Height = 15
+    Top = 172
+    Width = 73
+    Anchors = []
+    AutoSize = False
+    Caption = 'Mva Ajustado'
+    ParentColor = False
+  end
+  object edtValorST: TJvCalcEdit
+    Left = 409
+    Height = 23
+    Top = 188
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 22
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label15: TLabel
+    Left = 409
+    Height = 15
+    Top = 172
+    Width = 69
+    Anchors = []
+    AutoSize = False
+    Caption = 'Valor Icms ST'
+    ParentColor = False
+  end
+  object edtAliqIPI: TJvCalcEdit
+    Left = 32
+    Height = 23
+    Top = 267
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 23
+    Value = 4
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label17: TLabel
+    Left = 32
+    Height = 15
+    Top = 251
+    Width = 61
+    Anchors = []
+    AutoSize = False
+    Caption = 'Aliquota IPI'
+    ParentColor = False
+  end
+  object edtValorIPI: TJvCalcEdit
+    Left = 126
+    Height = 23
+    Top = 267
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 24
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label16: TLabel
+    Left = 126
+    Height = 15
+    Top = 251
+    Width = 42
+    Anchors = []
+    AutoSize = False
+    Caption = 'Valor IPI'
+    ParentColor = False
+  end
+  object Panel3: TPanel
+    Left = 32
+    Height = 25
+    Top = 218
+    Width = 276
+    BevelOuter = bvNone
+    Caption = 'Valores Ref. ao IPI'
+    Color = 15524797
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 25
+  end
+  object Panel5: TPanel
+    Left = 315
+    Height = 25
+    Top = 218
+    Width = 501
+    BevelOuter = bvNone
+    Caption = 'Valores Ref. ao Pis / Cofins'
+    Color = 15524797
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 26
+  end
+  object Label21: TLabel
+    Left = 315
+    Height = 15
+    Top = 251
+    Width = 87
+    Anchors = []
+    AutoSize = False
+    Caption = 'Base Pis / Cofins'
+    ParentColor = False
+  end
+  object edtBasePiscofins: TJvCalcEdit
+    Left = 315
+    Height = 23
+    Top = 267
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 27
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object edtAliqPis: TJvCalcEdit
+    Left = 409
+    Height = 23
+    Top = 267
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 28
+    Value = 0.65
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label20: TLabel
+    Left = 409
+    Height = 15
+    Top = 251
+    Width = 63
+    Anchors = []
+    AutoSize = False
+    Caption = 'Aliquota Pis'
+    ParentColor = False
+  end
+  object edtValorPis: TJvCalcEdit
+    Left = 503
+    Height = 23
+    Top = 267
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 29
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label23: TLabel
+    Left = 503
+    Height = 15
+    Top = 251
+    Width = 44
+    Anchors = []
+    AutoSize = False
+    Caption = 'Valor Pis'
+    ParentColor = False
+  end
+  object edtAliqCofins: TJvCalcEdit
+    Left = 597
+    Height = 23
+    Top = 267
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 30
+    Value = 3
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label22: TLabel
+    Left = 597
+    Height = 15
+    Top = 251
+    Width = 82
+    Anchors = []
+    AutoSize = False
+    Caption = 'Aliquota Cofins'
+    ParentColor = False
+  end
+  object edtValorCofins: TJvCalcEdit
+    Left = 691
+    Height = 23
+    Top = 267
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 31
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label24: TLabel
+    Left = 691
+    Height = 15
+    Top = 251
+    Width = 63
+    Anchors = []
+    AutoSize = False
+    Caption = 'Valor Cofins'
+    ParentColor = False
+  end
+  object edtAliqDIFAL: TJvCalcEdit
+    Left = 32
+    Height = 23
+    Top = 343
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 32
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label26: TLabel
+    Left = 32
+    Height = 15
+    Top = 327
+    Width = 54
+    Anchors = []
+    AutoSize = False
+    Caption = 'Aliq DIFAL'
+    ParentColor = False
+  end
+  object edtValorDIFAL: TJvCalcEdit
+    Left = 126
+    Height = 23
+    Top = 346
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 33
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label25: TLabel
+    Left = 126
+    Height = 15
+    Top = 327
+    Width = 59
+    Anchors = []
+    AutoSize = False
+    Caption = 'Valor DIFAL'
+    ParentColor = False
+  end
+  object edtAliqFCP: TJvCalcEdit
+    Left = 315
+    Height = 23
+    Top = 343
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 34
+    Value = 2
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label28: TLabel
+    Left = 315
+    Height = 15
+    Top = 327
+    Width = 45
+    Anchors = []
+    AutoSize = False
+    Caption = 'Aliq FCP'
+    ParentColor = False
+  end
+  object edtValorFCP: TJvCalcEdit
+    Left = 409
+    Height = 23
+    Top = 343
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 35
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label27: TLabel
+    Left = 409
+    Height = 15
+    Top = 327
+    Width = 50
+    Anchors = []
+    AutoSize = False
+    Caption = 'Valor FCP'
+    ParentColor = False
+  end
+  object edtAliqFCPST: TJvCalcEdit
+    Left = 503
+    Height = 23
+    Top = 343
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 36
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label30: TLabel
+    Left = 503
+    Height = 15
+    Top = 327
+    Width = 68
+    Anchors = []
+    AutoSize = False
+    Caption = 'Aliq FCP - ST'
+    ParentColor = False
+  end
+  object edtValorFCPST: TJvCalcEdit
+    Left = 597
+    Height = 23
+    Top = 343
+    Width = 88
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 37
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object Label29: TLabel
+    Left = 597
+    Height = 15
+    Top = 327
+    Width = 73
+    Anchors = []
+    AutoSize = False
+    Caption = 'Valor FCP - ST'
+    ParentColor = False
+  end
+  object DBGrid1: TDBGrid
+    Left = 32
+    Height = 100
+    Top = 386
+    Width = 277
+    Color = clWindow
+    Columns = <>
+    TabOrder = 38
+  end
+  object Image1: TImage
+    Left = 769
+    Height = 42
+    Top = 440
+    Width = 48
+    Picture.Data = {
+      1754506F727461626C654E6574776F726B477261706869631B01000089504E47
+      0D0A1A0A0000000D4948445200000020000000200806000000737A7AF4000000
+      017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048
+      597300000EC300000EC301C76FA864000000B0494441545847ED91410AC24010
+      04F70B8279AB178FFE477D8DBFC96A43452F8D599D8C06DD82BAA4D9E98694CE
+      526C7697EA24CEC7954BE27C5CB924CEC7954BE27C5CB924CEC7954BE238EEB8
+      24EE03FA801F18E01E4BE23E205E30873B2E89D73FA09E87FA8A3C7BE08E4BE2
+      F50F188FC3613A3E9EB67B3EB7E38E4BE2D95C8446B8E392B86980787B843B2E
+      899B0788F0EF88A2D2FB80DB183E7F865EFE95723195B7CAB3E57025CFE4D9DF
+      53CA1573A60D6EC15784E80000000049454E44AE426082
+    }
+    Stretch = True
+  end
+  object edtfrete: TJvCalcEdit
+    Left = 126
+    Height = 23
+    Top = 107
+    Width = 82
+    CalculatorLayout = clNormal
+    DialogTop = 0
+    DialogLeft = 0
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '#,##0.00'
+    HideSelection = True
+    Anchors = []
+    TabOrder = 39
+    ZeroEmpty = False
+    DecimalPlacesAlwaysShown = False
+  end
+  object DTTributo1: TDTTributo
+    CST = pi000
+    ValorProdutos = 0
+    Desconto = 0
+    Despesa = 0
+    Frete = 0
+    CustoVeiculo = 0
+    BaseIcms = 0
+    ValorIcms = 0
+    AliqIcms = 0
+    AliqReducaoBC = 0
+    ValorReducaoIcms = 0
+    BaseIcmsST = 0
+    AliqIcmsST = 0
+    ValorIcmsST = 0
+    Mva = 0
+    MvaAjustado = 0
+    AliqOrigem = 0
+    AliqDestino = 0
+    ModalidadeST = tmValorOperacao
+    ValorReducaoIcmsST = 0
+    AliqIcmsSTPauta = 0
+    TipoClienteForn = pCFisica
+    TipoNF = tpCSaida
+    BaseIPI = 0
+    AliqIPI = 0
+    ValorIPI = 0
+    CstPisCofins = Ppis01
+    AbaterIcmsDaBasePisCofins = False
+    BasePisCofins = 0
+    AliqPis = 0
+    ValorPis = 0
+    AliqCofins = 0
+    ValorCofins = 0
+    AliqFCP = 0
+    ValorFCP = 0
+    AliqFCPST = 0
+    ValorFCPST = 0
+    AliqFCPRet = 0
+    ValorFCPRet = 0
+    HabilitaDIFAL = False
+    AliqDIFAL = 0
+    AliqInternaUFOrigem = 0
+    ValorDIFALDestinatario = 0
+    Left = 642
+    Top = 169
+  end
+end
